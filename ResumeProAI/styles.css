@@ -1,0 +1,172 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f4f4f4;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0044cc;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo h1 {
+  font-size: 1.8em;
+}
+
+header .logo .ai-highlight {
+  color: #ffcc00;
+}
+
+header .logo-img {
+  width: 50px;
+  height: auto;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+header nav ul li a.cta {
+  background: #ffcc00;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #0056e3;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  color: #0056e3;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold; /* Make text bold */
+  text-transform: uppercase; /* Optional: To make the text all caps */
+}
+
+.hero button:hover {
+  background: #ffd633;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background: white;
+}
+
+.feature-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; /* Adjust the space between resume example and buttons */
+  width: 100%; /* Make sure the content takes the full width of the container */
+}
+
+.resume-example {
+  flex: 1; /* Makes the resume example take up the available space */
+  max-width: 45%; /* Ensure it doesn’t get too wide */
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Makes the actions (buttons) take the available space */
+  gap: 20px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  background: #003366; /* Darker blue for the buttons */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px; /* Make the buttons consistent in width */
+  font-weight: bold; /* Make text bold */
+  text-transform: uppercase; /* Optional: To make the text all caps */
+}
+
+.actions button:hover {
+  background: #002244; /* Darker shade on hover */
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 20px;
+}
+
+.testimonials blockquote {
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
