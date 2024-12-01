@@ -1,137 +1,219 @@
 /* Parent Container */
 .parentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch; /* Stretch children to fill the parent width */
-    justify-content: center;
-    background-color: white;
-    height: 100vh; /* Occupy the full height of the viewport */
-    width: 100vw; /* Occupy the full width of the viewport */
-   
-    font-family: Arial, sans-serif;
-    margin: 0; /* Remove default body margins */
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .parentContainer h1 {
-    color: rgb(0, 0, 0);
-    position: relative;
-    text-align: center;
-    margin: 15px 0; /* Add spacing around the heading */
-    font-weight: bold;
+  color: rgb(0, 0, 0);
+  position: relative;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
 }
 
 /* Main Container */
 .container {
-    display: flex;
-    flex-direction: row; /* Ensure chat and resume are side by side */
-    justify-content: space-between;
-    align-items: stretch; /* Align items to fill the container height */
-    flex: 1; /* Allow container to grow and fill the remaining height */
-    width: 100%; /* Full width of the parent container */
-    gap: 20px;
-    padding: 20px; /* Add some spacing around the content */
-    box-sizing: border-box; /* Include padding in the width/height calculations */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1 1 0%;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 0;
 }
 
-/* Chat Section */
-.chatSection {
-    flex: 1; /* Allow chat section to expand equally */
-    min-width: 400px; /* Ensure a reasonable minimum size */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    overflow: hidden; /* Prevent overflow of child elements */
-    display: flex;
-    flex-direction: column;
+.nested-content {
+  margin-left: 20px;
+  padding: 10px;
+  border-left: 2px solid #ddd;
+  font-size: 1rem;
+  color: #333;
 }
 
-/* Resume Section */
+.chatSection,
 .resumeSection {
-    flex: 2; /* Allow resume section to occupy more space */
-    background-color: #ffffff00;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    overflow-y: auto; /* Enable vertical scrolling for longer resumes */
-    display: flex;
-    flex-direction: column;
+  flex: 1 1 0%;
+  min-width: 400px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  color: black;
+  overflow-y: auto;
 }
 
 /* Chat Message List */
 .incoming {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.resumeContent {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.NoResume {
+  color: black;
+  font-size: 3rem;
 }
 
 /* File Upload Input */
-.resumeSection input[type="file"] {
-    display: block;
-    width: 100%; /* Make it span the full width of the container */
-    margin: 10px 0; /* Add spacing around the button */
-    padding: 15px; /* Adjust padding for a larger button size */
-    font-size: 1.25rem; /* Increase font size for better readability */
-    border: 2px solid #ccc; /* Define a border */
-    border-radius: 8px; /* Round the corners */
-    background-color: #c6e3fa; /* Light background for the button */
-    color: #000000; /* Text color */
-    cursor: pointer; /* Show pointer cursor on hover */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: all 0.3s ease; /* Smooth hover effect */
+.resumeSection input[type="file"],
+.uploadInput {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 1.25rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #c6e3fa;
+  color: #000000;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.resumeSection h2{
-    color: black;
-    font-size: 3rem;
+/* File Upload Hover Effect */
+.resumeSection input[type="file"]:hover,
+.uploadInput:hover {
+  background-color: #299dfc;
+  border-color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.NoResume{
-    color: black;
-    font-size: 3rem;
-}
-/* File Upload Input Hover Effect */
-.resumeSection input[type="file"]:hover {
-    background-color: #299dfc; /* Slightly darker background on hover */
-    border-color: #000000; /* Darker border on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+/* Download Button */
+.downloadButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
-/* File Upload Input Focus Effect */
-.resumeSection input[type="file"]:focus {
-    outline: none; /* Remove default focus outline */
-    border-color: #007bff; /* Highlight border in blue */
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Blue glow effect */
+.downloadButton:hover {
+  background-color: #0056b3;
 }
+
+/* Resume Section Content */
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.resume-section .resume-section-content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Template Preview */
+.template-preview {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel */
+.carousel .slide {
+  background: none;
+  padding: 20px;
+}
+
+.carousel .legend {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
 /* Scrollbars */
 .resumeSection::-webkit-scrollbar,
 .chatSection::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .resumeSection::-webkit-scrollbar-thumb,
 .chatSection::-webkit-scrollbar-thumb {
-    background-color: #656565;
-    border-radius: 8px;
+  background-color: #656565;
+  border-radius: 8px;
 }
 
 .resumeSection::-webkit-scrollbar-thumb:hover,
 .chatSection::-webkit-scrollbar-thumb:hover {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack sections vertically on small screens */
-    }
+  .container {
+      flex-direction: column;
+  }
 
-    .chatSection,
-    .resumeSection {
-        width: 100%;
-        margin-bottom: 20px;
-        flex: none; /* Reset flex to prevent shrinking */
-    }
+  .chatSection,
+  .resumeSection {
+      width: 100%;
+      margin-bottom: 20px;
+      flex: none;
+      min-height: auto;
+  }
 }
+
+.cs-button--attachment {
+  display: none !important;
+}
+.loadingIndicator {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.loadingIndicator p {
+  animation: fadeIn 1.5s infinite;
+}
+
+@keyframes fadeIn {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+

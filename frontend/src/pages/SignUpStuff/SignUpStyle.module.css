@@ -1,146 +1,153 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: flex-start; /* Aligns at the top */
-    height: 100vh; /* Full viewport height */
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .pageContainer {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: flex-start; /* Aligns at the top */
-    height: 20vh; /* Ensures the container takes the full height of the viewport */
-    margin-left: 0px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    margin-left: -5px; /* Adjust this value to position closer to the input */
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .pageTitle {
-    text-align: center;
-    background: linear-gradient(180deg, #0d47a1, #1976d2, #00e5ff, #64ffda, #ffffff);
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* For Safari/Chrome */
-    -webkit-text-fill-color: transparent;
-    font-size: 100px;
-  }
-  
-  .loginCardContainer {
-    width: 500px;
-    padding: 45px;
-    border-radius: 20px;
-    background-color: #00000007;
-    border: 1px solid #7DF9FF;
-    text-align: center;
-    min-height: 700px;
-    margin: auto;
-  }
-  
-  .loginInput {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    margin-bottom: 50px;
-    margin-left: -15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #ffffff;
-    box-shadow: 0 2px px #00e5ff;
-    color: black;
-  }
-  
-  .loginButton {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
-    background: linear-gradient(90deg, #0d47a1, #1976d2, #00e5ff);
-    color: white;
-    margin-top: 50px;
-    transition: background 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .loginButton:hover {
-    background-color: #525252ac;
-  }
-  
-  .orText {
-    margin: 20px 0;
-    color: #888;
-    font-size: 16px;
-  }
-  
-  /* Google button styling */
-  .googleButton {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    color: black;
-  }
-  
-  /* Google button icon styling */
-  .googleIcon {
-    width: 50px; /* Adjust the width to your desired size */
-    height: 50px; /* Adjust the height to match the width */
-    margin-right: 10px; /* Space between icon and text */
-    object-fit: contain; /* Ensure the icon scales properly */
-  }
-  
-  /* Sign-up link styling */
-  .signupLink {
-    font-size: 14px;
-    color: #ffffff;
-    text-decoration: none;
-    margin: 50px;
-  }
-  
-  .signupLinkContainer {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .loginCardContainer h1{
-    color: rgb(249, 249, 249);
-    -webkit-text-stroke: 1px #7DF9FF; /* Stroke color and width */
-  }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: flex-start; /* Aligns at the top */
+  height: 100vh; /* Full viewport height */
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(255, 255, 255) !important;
+}
 
-  .errorMessage{
-    margin: 20px 0;
-    color: #ff0000;
-    font-size: 20px;
-  }
+.pageContainer {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: flex-start; /* Aligns at the top */
+  height: 20vh; /* Ensures the container takes the full height of the viewport */
+  margin-left: 0px;
+}
 
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: -5px; /* Adjust this value to position closer to the input */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.pageTitle {
+  text-align: center;
+  background: #299dfc; 
+  background-clip: text; 
+   -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  font-size: 100px;
+  /* color: #299dfc; */
   
+}
+
+.loginCardContainer {
+  width: 500px;
+  padding: 45px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.813) !important;
+  border: 1px solid #7DF9FF;
+  text-align: center;
+  min-height: 700px;
+  margin: auto;
+  color: #299dfc;
+  box-shadow: 0 9px px #299dfc;
+}
+
+.loginInput {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  margin-bottom: 50px;
+  margin-left: -15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px px #299dfc;
+  color: black;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #299dfc;
+  color: white;
+  margin-top: 50px;
+  transition: background 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginButton:hover {
+  background-color: #299dfc51;
+  color: #299dfc;
+}
+
+.orText {
+  margin: 20px 0;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Google button styling */
+.googleButton {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+/* Google button icon styling */
+.googleIcon {
+  width: 50px; /* Adjust the width to your desired size */
+  height: 50px; /* Adjust the height to match the width */
+  margin-right: 10px; /* Space between icon and text */
+  object-fit: contain; /* Ensure the icon scales properly */
+}
+
+/* Sign-up link styling */
+.signupLink {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 50px;
+}
+
+.signupLinkContainer {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.loginCardContainer h1{
+  color: #299dfc;
+  /* -webkit-text-stroke: 1px #7DF9FF; Stroke color and width */
+}
+
+.errorMessage
+{
+  margin: 20px 0;
+  color: #ff0000;
+  font-size: 20px;
   
+}
+
+

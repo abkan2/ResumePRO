@@ -1,0 +1,14 @@
+export { default as AndyResume } from './resume_templates/AndyResume';
+export { default as BobokResume } from './resume_templates/BobokResume';
+export { default as CiesResume } from './resume_templates/CiesResume';
+export { default as ClassicResume } from './resume_templates/ClassicResume';
+export { default as CreativeResume } from './resume_templates/CreativeResume';
+export { default as EngineerResume } from './resume_templates/EngineerResume';
+//export { default as GenerateExports } from '../GenerateExports';
+export { default as MacOSIOSDevResume } from './resume_templates/MacOSIOSDevResume';
+export { default as NovelIstResume } from './resume_templates/NovelIstResume';
+export { default as ProfessionalAcademicResume } from './resume_templates/ProfessionalAcademicResume';
+export { default as ProfessionalResume } from './resume_templates/ProfessionalResume';
+export { default as ResearchResume } from './resume_templates/ResearchResume';
+export { default as ZeyiResume } from './resume_templates/ZeyiResume';
+//export { default as index } from './index';
