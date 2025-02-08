@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import SignUpStyles from "./SignUpStyle.module.css"
 
-import googleIcon from "/Users/abdulkanu/ResumePRO/ResumePro_Project/frontend/src/assets/google-icon.png"
+import GoogleIcon from "../../assets/google-icon.png";
+
 
 import { doCreateUserWithEmailAndPassword ,doSignInWithGoogle} from "./../../firebase/auth";
 import { useAuth } from "../../context/authContext";

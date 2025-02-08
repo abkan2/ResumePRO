@@ -4,7 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 import LoginStyles from "./LoginPage.module.css"
 
-import googleIcon from "/Users/abdulkanu/ResumePRO/ResumePro_Project/frontend/src/assets/google-icon.png"
+import googleIcon from "../../assets/google-icon.png"
 
 
 

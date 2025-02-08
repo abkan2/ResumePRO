@@ -26,7 +26,7 @@ import Modal from 'react-modal'; // If using react-modal
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel styles
 // Adjust the import path based on where your templates.js file is located
-import { templates } from '/Users/abdulkanu/ResumePRO/ResumePro_Project/frontend/src/templates.js';
+import { templates } from '../../templates.js';
 
 
 
