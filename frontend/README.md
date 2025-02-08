@@ -1,261 +1,269 @@
-# ResumePro - AI-Powered Resume Builder & Optimizer
+# ResumePro Frontend
 
-ResumePro is an interactive web application that leverages OpenAI's GPT-4 to help users create, optimize, and manage their resumes. With real-time AI assistance, users can either upload existing resumes for enhancement or build new ones from scratch, receiving intelligent recommendations and instant updates along the way.
+A React-based frontend for the ResumePro application, featuring real-time resume editing, AI chat integration, and dynamic template management.
 
-![ResumePro Login](frontend/src/assets/LandingPage.png)
-![ResumePro Chatbot](frontend/src/assets/Chatbot.png)
 ## Table of Contents
 
 - [Features](#features)
-- [System Architecture](#system-architecture)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
+- [Components](#components)
+- [State Management](#state-management)
+- [Setup & Installation](#setup--installation)
 - [Usage](#usage)
-- [Features in Detail](#features-in-detail)
-- [Contributing](#contributing)
-- [License](#license)
+- [API Integration](#api-integration)
+- [Styling](#styling)
 
 ## Features
 
-* **AI-Powered Resume Analysis**
-  * Real-time resume feedback
-  * Content optimization suggestions
-  * Style and formatting recommendations
-  * Industry-specific insights
-
-* **Interactive Resume Building**
-  * Chat-based resume creation
-  * Step-by-step guidance
-  * Real-time content updates
-  * Professional templates
-
-* **Smart Resume Upload**
-  * Automatic resume parsing
-  * Format conversion
-  * Content extraction
-  * Structure analysis
-
-* **Live Editing**
+* **Interactive Resume Builder**
   * Real-time preview
-  * AI-suggested improvements
-  * Direct content modification
-  * Version tracking
+  * Section-by-section editing
+  * Template switching
+  * AI-powered suggestions
+
+* **AI Chat Interface**
+  * Real-time communication with GPT-4
+  * Contextual resume suggestions
+  * Interactive editing through chat
+  * Streaming responses
+
+* **Resume Upload**
+  * Drag-and-drop file upload
+  * Multiple format support
+  * Automatic parsing
+  * Error handling
 
 * **Template System**
-  * Professional design templates
-  * Customizable layouts
-  * Industry-specific formats
-  * Export options
+  * Multiple professional templates
+  * Live template switching
+  * Customizable styling
+  * Responsive design
 
-## System Architecture
 
-### Frontend (React)
-* Single Page Application (SPA)
-* Real-time updates using Socket.IO
-* Responsive design
-* Interactive chat interface
-* Live preview rendering
+## Components
 
-### Backend (Node.js)
-* Express server
-* Socket.IO for real-time communication
-* OpenAI GPT-4 integration
-* File processing system
-* Resume data management
+### Resume Components
 
-### AI Integration
-* GPT-4 for natural language processing
-* Resume parsing and analysis
-* Content generation and optimization
-* Interactive chat responses
+1. **ResumeBuilder**
+   * Main container for resume creation
+   * Manages sections and layout
+   * Handles template switching
 
-## Technologies Used
+2. **ResumePreview**
+   * Real-time preview of resume
+   * PDF/DOCX export functionality
+   * Responsive design
 
-### Frontend
-* React 18
-* Socket.IO Client
-* TailwindCSS
-* React Router
-* Context API
+3. **SectionEditor**
+   * Individual section editing
+   * Form validation
+   * Real-time updates
 
-### Backend
-* Node.js
-* Express
-* Socket.IO
-* OpenAI API
-* CORS
+### Chat Components
 
-### Development Tools
-* Git
-* npm/yarn
-* ESLint
-* Prettier
-* VS Code
+1. **ChatInterface**
+   * AI interaction container
+   * Message history management
+   * Real-time typing indicators
 
-## Getting Started
+2. **MessageList**
+   * Displays chat history
+   * Message formatting
+   * Auto-scrolling
 
-### Prerequisites
+3. **InputArea**
+   * User input handling
+   * File upload integration
+   * Command processing
 
-* Node.js (v12 or higher)
-* npm or yarn
-* OpenAI API key
-* Modern web browser
-* Git
+## State Management
 
-### Installation
+### Context Structure
 
-1. Clone the repository:
+```javascript
+// ResumeContext
+const ResumeContext = {
+  resumeData: {
+    personalInfo: {},
+    experience: [],
+    education: [],
+    skills: []
+  },
+  selectedTemplate: string,
+  editMode: boolean,
+  actions: {
+    updateSection(),
+    changeTemplate(),
+    exportResume()
+  }
+}
+
+// ChatContext
+const ChatContext = {
+  messages: [],
+  isTyping: boolean,
+  actions: {
+    sendMessage(),
+    processCommand(),
+    updateResume()
+  }
+}
+```
+
+## Setup & Installation
+
+1. Install dependencies:
    ```bash
-   git clone https://github.com/your-username/resume-pro.git
-   cd resume-pro
+   npm install
    ```
 
-2. Install frontend dependencies:
-   ```bash
-   cd frontend
-   npm install   # or: npm i
-   ```
-
-3. Install backend dependencies:
-   ```bash
-   cd ../backend
-   npm install   # or: npm i
-   ```
-
-Note: The project uses Node.js/JavaScript for both frontend and backend, so we use npm (Node Package Manager) to install dependencies. The dependencies are specified in the `package.json` file in each directory.
-
-4. Set up environment variables:
-
-   Frontend (.env):
+2. Create `.env` file:
    ```env
    VITE_BACKEND_URL=http://localhost:3001
    ```
 
-   Backend (.env):
-   ```env
-   PORT=3001
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-
-5. Start the development servers:
-
-   Backend:
+3. Start development server:
    ```bash
-   cd backend
-   npm run dev
-   ```
-
-   Frontend:
-   ```bash
-   cd frontend
    npm run dev
    ```
 
 ## Usage
 
-1. **Upload Existing Resume**
-   * Click "Upload Resume"
-   * Select your resume file
-   * Wait for AI analysis
-   * Review suggestions
+### Socket.IO Integration
 
-2. **Create New Resume**
-   * Click "Create New"
-   * Follow the chat-guided process
-   * Fill in required information
-   * Preview and edit
+```javascript
+import { io } from 'socket.io-client';
 
-3. **Chat with AI**
-   * Use the chat interface
-   * Ask questions about your resume
-   * Request specific changes
-   * Get professional advice
+const socket = io(import.meta.env.VITE_BACKEND_URL);
 
-4. **Export Resume**
-   * Choose a template
-   * Preview the final version
-   * Download in preferred format
-   * Share directly (optional)
-
-## Features in Detail
-
-### AI Chat Assistant
-The integrated GPT-4 powered chat assistant can:
-* Analyze resume content
-* Suggest improvements
-* Answer questions
-* Make real-time changes
-* Provide industry-specific advice
-
-### Resume Templates
-Available templates include:
-* Professional
-* Modern
-* Creative
-* Academic
-* Technical
-* Executive
-
-### Export Options
-Supported formats:
-* PDF
-* DOCX
-* HTML
-* Plain Text
-* JSON
-
-## Development
-
-### Running Tests
-```bash
-# Frontend tests
-cd frontend
-npm run test
-
-# Backend tests
-cd backend
-npm run test
+// Event listeners
+socket.on('user_message_response_typing', handleTyping);
+socket.on('user_message_response_done', handleResponse);
+socket.on('preview_resume_done', handlePreview);
 ```
 
-### Code Style
-The project uses ESLint and Prettier for code formatting:
-```bash
-# Format code
-npm run format
+### Resume Operations
 
-# Lint code
-npm run lint
+```javascript
+// Upload resume
+const handleUpload = async (file) => {
+  const text = await file.text();
+  socket.emit('upload_resume', { rawResumeText: text });
+};
+
+// Update section
+const updateSection = (section, data) => {
+  socket.emit('update_field', { field: section, value: data });
+};
 ```
 
-## Security
+## API Integration
 
-* OpenAI API key protection
-* Input sanitization
-* Rate limiting
-* CORS configuration
-* Environment variable management
+### Socket Events
+
+1. **Emitting Events**
+   * `user_message`: Send chat messages
+   * `upload_resume`: Upload resume file
+   * `update_field`: Update resume fields
+   * `download_resume`: Request resume download
+
+2. **Listening Events**
+   * `user_message_response_typing`: Real-time AI response
+   * `user_message_response_done`: Completed AI response
+   * `preview_resume_done`: Resume preview update
+   * `field_updated`: Field update confirmation
+
+## Styling
+
+### Tailwind Configuration
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#4F46E5',
+        secondary: '#10B981'
+      }
+    }
+  },
+  plugins: []
+}
+```
+
+### Template System
+
+Templates are styled using Tailwind CSS classes and can be customized through the TemplateSelector component.
+
+## Development Guidelines
+
+1. **Component Creation**
+   * Use functional components
+   * Implement proper prop-types
+   * Follow atomic design principles
+
+2. **State Management**
+   * Use context for global state
+   * Implement custom hooks
+   * Keep components pure
+
+3. **Code Style**
+   * Follow ESLint configuration
+   * Use Prettier for formatting
+   * Write JSDoc comments
+
+## Error Handling
+
+```javascript
+const ErrorBoundary = ({ children }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return <ErrorDisplay />;
+  }
+
+  return children;
+};
+```
+
+## Testing
+
+```bash
+# Run tests
+npm run dev
+
+```
 
 ## Performance Optimization
 
-* Lazy loading of components
-* Optimized asset delivery
-* Caching strategies
-* Efficient state management
-* Real-time updates optimization
+* Implement React.memo for pure components
+* Use lazy loading for templates
+* Optimize socket connections
+* Implement proper cleanup in useEffect
+
+## Browser Support
+
+* Chrome (latest)
+* Firefox (latest)
+* Safari (latest)
+* Edge (latest)
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+1. Follow the coding style guide
+2. Write unit tests for new features
+3. Update documentation
+4. Create detailed PR descriptions
 
+## Troubleshooting
 
-## Acknowledgments
+Common issues and solutions:
+* Socket connection issues
+* Template rendering problems
+* State management conflicts
+* File upload errors
 
-* OpenAI for GPT-4 API
-* React development community
-* Open source contributors
-* Beta testers and early adopters
+## License
+
+MIT License - see LICENSE.md
